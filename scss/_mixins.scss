@@ -1,0 +1,11 @@
+/// Generate blurred gray background based on https://hype4.academy/tools/glassmorphism-generator
+/// @param {Number} $blur-value - Amount (in px) of blur on background (0px to 20px)
+/// @param {Number} $transparency - Opacity of the background (0 to 1)
+/// @output 'background', 'box-shadow', 'backdrop-filter' and 'border'
+@mixin glassmorphism($blur-value, $transparency) {
+    background: rgba( 255, 255, 255, $transparency );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( $blur-value );
+    -webkit-backdrop-filter: blur( $blur-value );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

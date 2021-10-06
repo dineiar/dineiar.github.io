@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Sass",
+            "type": "shell",
+            "command": "docker run --rm -v $(pwd):/data codycraven/sassc scss/css.scss > css.css",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Sass compressed",
+            "type": "shell",
+            "command": "docker run --rm -v $(pwd):/data codycraven/sassc -t compressed scss/css.scss > css.min.css",
+            "group": "build"
+        }
+    ]
+}
